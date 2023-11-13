@@ -5,4 +5,4 @@ Theodore Morgan Consultation Bureau is a safe space for exploring technology:
 - large language models
 - tutorials and demos
 
-<img align="right" src="https://gist.github.com/0-vortex/3ba0d05bcd4afdbd0f2bf20542caf682/raw/391e6b9aff933daa1e7baf49db5c509b4f062541/logo-animated.gif" width="300"/>
+<img align="right" src="https://tmcb.space/_next/image?url=%2Flogo-animated.gif&w=256&q=75" width="256"/>
