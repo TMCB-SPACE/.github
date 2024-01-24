@@ -1,0 +1,41 @@
+name: 'Lock Threads'
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_call:
+  workflow_dispatch:
+
+permissions:
+  issues: write
+  pull-requests: write
+  discussions: write
+
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: true
+
+jobs:
+  action:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: dessant/lock-threads@v5.0.1
+        with:
+          exclude-any-pr-labels: 'wip'
+          include-all-pr-labels: 'released'
+          issue-inactive-days: '30'
+          pr-inactive-days: '30'
+          discussion-inactive-days: '90'
+          issue-comment: >
+            This issue has been automatically locked since there
+            has not been any recent activity after it was closed.
+            Please open a new issue for related bugs.
+          pr-comment: >
+            This pull request has been automatically locked since there
+            has not been any recent activity after it was closed.
+            Please open a new issue for related bugs.
+          discussion-comment: >
+            This discussion has been automatically locked since there
+            has not been any recent activity after it was closed.
+            Please open a new discussion for related topics.
+          log-output: true
