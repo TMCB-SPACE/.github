@@ -27,7 +27,7 @@ jobs:
         run: npm i -g npm@latest
 
       - name: "📦 install dependencies"
-        uses: bahmutov/npm-install@v1
+        uses: bahmutov/npm-install@v1.10.2
 
       - name: "🔍 run tests"
         run: npm run test --if-present
@@ -49,7 +49,7 @@ jobs:
         run: npm i -g npm@latest
 
       - name: "📦 install dependencies"
-        uses: bahmutov/npm-install@v1
+        uses: bahmutov/npm-install@v1.10.2
 
       - name: "🔍 lint code"
         run: npm run lint --if-present
